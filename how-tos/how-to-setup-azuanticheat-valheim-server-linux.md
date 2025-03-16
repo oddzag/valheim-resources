@@ -1,3 +1,5 @@
+# How to setup AzuAntiCheat on a Dedicate Valheim server on Linux (Debian)
+
 Personally, I prefer Valheim as vanilla as possible, I only like using a few QOL mods, but I don't want players to install/use mods that "cheat" on my server. To do this, you can use AzuAntiCheat and its white/grey listing feature. The whitelist **REQUIRES** specified mods, while the greylist **ALLOWS** specified mods. 
 
 I wrote this to follow up my [dedicated server setup guide](/how-tos/how-to-setup-dedicated-valheim-server-linux.md). There's even less guides for AzuAntiCheat out there..
