@@ -209,15 +209,17 @@ cp plugins/Valheim.DisplayBepInExInfo.dll config/AzuAntiCheat_Whitelist
 cp plugins/Azumatt-AzuAntiCheat/AzuAnticheat.dll config/AzuAntiCheat_Whitelist
 ```
 
-Next, let's greylist a mod, we'll start with [TeleportEverything](https://thunderstore.io/c/valheim/p/OdinPlus/TeleportEverything/). I tend to just make a directory for the mod in `BepInEx/plugins`, download it there, and then copy the `dll` to the greylist directory. 
+Next, let's greylist a mod, we'll start with [TeleportEverything](https://thunderstore.io/c/valheim/p/OdinPlus/TeleportEverything/). Just as we did with AzuAntiCheat, we'll download TeleportEverything following the `namespace/name/version` scheme in order to allow for [automatically updating our mods](/how-tos/how-to-autoupdate-mods-valheim-server-linux.md).
 
 ```
 cd /home/steam/valheim/BepInEx/plugins
 mkdir TeleportEverything
 cd TeleportEverything
 wget --content-disposition https://thunderstore.io/package/download/OdinPlus/TeleportEverything/2.7.0/
-unzip OdinPlus-TeleportEverything-2.7.0.zip
-cp TeleportEverything.dll ../../config/AzuAntiCheat_Whitelist
+mkdir 2.7.0
+unzip OdinPlus-TeleportEverything-2.7.0.zip -d 2.7.0/
+rm -R *.zip
+cp 2.7.0/TeleportEverything.dll ../../config/AzuAntiCheat_Greylist
 ```
 
 Now you need to install your mods using Thunderstore. [Here's a great guide](https://archive.fo/f8huE) by [DatHost](https://dathost.net/). You **NEED** to have AzuAntiCheat. When you install it, it'll automatically download BepInEx_Valheim. If you followed this guide strictly, you **CAN** install TeleportEverything.
