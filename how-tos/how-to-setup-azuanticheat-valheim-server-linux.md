@@ -149,6 +149,11 @@ Download and install [AzuAntiCheat](https://thunderstore.io/c/valheim/p/Azumatt/
 namespace/name/version
 ```
 
+In this case:
+- `namespace` = Azumatt
+- `name` = AzuAntiCheat
+- `version` = 4.3.8
+
 This is following [Thunderstore's API](https://thunderstore.io/api/docs/), so that we can use our [autoupdate_mods]() script to automatically download and white/greylist new mod versions. 
 
 ```
@@ -209,12 +214,12 @@ cp plugins/Valheim.DisplayBepInExInfo.dll config/AzuAntiCheat_Whitelist
 cp plugins/Azumatt-AzuAntiCheat/AzuAnticheat.dll config/AzuAntiCheat_Whitelist
 ```
 
-Next, let's greylist a mod, we'll start with [TeleportEverything](https://thunderstore.io/c/valheim/p/OdinPlus/TeleportEverything/). Just as we did with AzuAntiCheat, we'll download TeleportEverything following the `namespace/name/version` scheme in order to allow for [automatically updating our mods](/how-tos/how-to-autoupdate-mods-valheim-server-linux.md).
+Next, let's greylist a mod, we'll start with [TeleportEverything](https://thunderstore.io/c/valheim/p/OdinPlus/TeleportEverything/) by OdinPlus. Just as we did with AzuAntiCheat, we'll download TeleportEverything following the `namespace/name/version` scheme in order to allow for [automatically updating our mods](/how-tos/how-to-autoupdate-mods-valheim-server-linux.md). Then copy the mod's `dll` to the AzuAntiCheats Greylist folder.
 
 ```
 cd /home/steam/valheim/BepInEx/plugins
-mkdir TeleportEverything
-cd TeleportEverything
+mkdir OdinPlus/TeleportEverything
+cd OdinPlus/TeleportEverything
 wget --content-disposition https://thunderstore.io/package/download/OdinPlus/TeleportEverything/2.7.0/
 mkdir 2.7.0
 unzip OdinPlus-TeleportEverything-2.7.0.zip -d 2.7.0/
