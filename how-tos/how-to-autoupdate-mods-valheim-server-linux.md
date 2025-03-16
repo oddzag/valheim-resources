@@ -17,3 +17,5 @@ As an example, if you've followed the guides so far, TeleportEverything's `dll` 
 ```
 
 This script will compare the version, 2.7.0 using the example above, to the `latest_version` value from the `json` response of the `api_v1_package_metrics` endpoint. If they're not the same, it will download the latest version and move its `dll` into the Whitelist or Greylist folders.
+
+You only need to update the script once: before running it for the first time to set the directory where your mods are located. Then, you can setup a `cronjob` to run the script at a specified interval. It will scan the mod folder, check for new updates, download them, and then move the `dll` to the correct Whitelist or Greylist folder.
