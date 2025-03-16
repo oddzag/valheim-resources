@@ -1,6 +1,6 @@
 Personally, I prefer Valheim as vanilla as possible, I only like using a few QOL mods, but I don't want players to install/use mods that "cheat" on my server. To do this, you can use AzuAntiCheat and its white/grey listing feature. The whitelist **REQUIRES** specified mods, while the greylist **ALLOWS** specified mods. 
 
-I wrote this to follow up my [dedicated server setup guide](https://github.com/oddzag/valheim-resources/how-tos/how-to-setup-dedicated-valheim-server-linux.md). There's even less guides for AzuAntiCheat out there..
+I wrote this to follow up my [dedicated server setup guide](/how-tos/how-to-setup-dedicated-valheim-server-linux.md). There's even less guides for AzuAntiCheat out there..
 
 **IMPORTANT**:
 - This has not been tested with crossplay. I assume it's not compatible, as the preconfigured BepInEx disables crossplay.
