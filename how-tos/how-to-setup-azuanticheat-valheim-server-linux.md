@@ -141,21 +141,32 @@ On our server, they're located in the valheim server directory, specifically:
 /home/steam/valheim/BepInEx/plugins
 ```
 
-Download and install [AzuAntiCheat](https://thunderstore.io/c/valheim/p/Azumatt/AzuAntiCheat/). As of writing this, the current version is 4.3.8:
+Download and install [AzuAntiCheat](https://thunderstore.io/c/valheim/p/Azumatt/AzuAntiCheat/). As of writing this, the current version is 4.3.8. In order to [auto update our mods](/how-tos/how-to-autoupdate-mods-valheim-server-linux.md) later on, we're going to setup these initial mods with the following scheme in our `plugins` folder:
+
+```
+namespace/name/version
+```
+
+This is following [Thunderstore's API](https://thunderstore.io/api/docs/), so that we can use our [autoupdate_mods]() script to automatically download and white/greylist new mod versions. 
 
 ```
 cd /home/steam/valheim/BepInEx/plugins
-mkdir Azumatt-AzuAntiCheat
-cd Azumatt-AzuAntiCheat
+mkdir Azumatt/AzuAntiCheat
+cd Azumatt/AzuAntiCheat
+```
+
+Now get AzuAntiCheat's manual download link from the Thunderstore here: [Azumatt/AzuAntiCheat](https://thunderstore.io/package/download/Azumatt/AzuAntiCheat). You can see below that the time of writing this, the current version was 4.3.8. So download the zip, and create the corresponding version subdirectory. This only needs to be once if you setup the [autoupdate](/scripts/autoupdate_mods.sh) script.
+```
 wget --content-disposition https://thunderstore.io/package/download/Azumatt/AzuAntiCheat/4.3.8/
-unzip *.zip
+mkdir 4.3.8
+unzip *.zip -d 4.3.8/
+rm -R *.zip
 ```
 
 AzuAntiCheat is now installed, just like that. Next, we need to whitelist the mods we want. To do so, we need to get the mod's `dll` file and put it in `BepInEx/config/AzuAntiCheat_Whitelist`. However, that directory doesn't yet exist. It is generated, along with several other files/directories, when the server is started.
 
 Before you start the server, take a look in `/home/steam/valheim/BepInEx`, you should see the following:
 ```
-ls /home/steam/valheim/BepInEx
 config  core  patchers  plugins
 ```
 
